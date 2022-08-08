@@ -19,17 +19,16 @@ const Feedpost = () => {
   };
 
   return (
-    <>
+    <View>
       <Header />
       <View style={styles.container}>
         <Text>Helloooo</Text>
         <FlatList data={userdata} renderItem={_renderitem} />
       </View>
-    </>
+    </View>
   );
 };
 
-// define your styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
