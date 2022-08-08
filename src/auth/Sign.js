@@ -1,13 +1,6 @@
 //import liraries
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Button,
-  FlatList,
-  SafeAreaView,
-} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import Btn from '../components/Btn';
 import Textinputevent from '../components/TextInput';
 import {SignUPText} from '../helper/String';
@@ -15,37 +8,21 @@ import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {USERDATA} from '../action/Useraction';
 import {useNavigation} from '@react-navigation/native';
-
 const Signup = () => {
   const {userdata} = useSelector(state => state.pageList);
   const dispatch = useDispatch();
   const {navigate} = useNavigation();
-
   const [name, setUsername] = useState('');
   const [email, setUseremail] = useState('');
   const [phone, setUserphone] = useState('');
   const [password, setUserpassword] = useState('');
-
-  const list = [
-    {
-      name: name,
-      email: email,
-      phone: phone,
-      password: password,
-    },
-  ];
-  console.log(list);
-  const _Renderitem = ({item}) => {
-    return (
-      <View>
-        <Text>{item?.name}</Text>
-        <Text>{item?.email}</Text>
-        <Text>{item?.phone}</Text>
-        <Text>{item?.password}</Text>
-      </View>
-    );
+  const list = {
+    name: name,
+    email: email,
+    phone: phone,
+    password: password,
   };
-
+  console.log(list);
   const Onsubmit = () => {
     dispatch(USERDATA(list));
     navigate('feed');
@@ -76,7 +53,6 @@ const Signup = () => {
         Reducer_data={list}
         onPress={Onsubmit}
       />
-      <FlatList data={userdata} renderItem={_Renderitem} />
     </View>
   );
 };

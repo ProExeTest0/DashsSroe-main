@@ -36,6 +36,7 @@ const INITIAL_STATE = {
   arr: [],
   userdata: [],
 };
+
 const pageListReducer = (state = INITIAL_STATE, action) => {
   console.log('Action::', state);
   switch (action.type) {
@@ -54,6 +55,7 @@ const pageListReducer = (state = INITIAL_STATE, action) => {
         ...state,
         userdata: action.payload,
       };
+
     default:
       return state;
   }
