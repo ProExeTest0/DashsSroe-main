@@ -1,5 +1,4 @@
-//import liraries
-import React, {Component} from 'react';
+import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 const ProfileView = () => {
   return <View style={styles.container}></View>;
@@ -13,5 +12,4 @@ const styles = StyleSheet.create({
   },
 });
 
-//make this component available to the app
 export default ProfileView;

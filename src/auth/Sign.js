@@ -16,17 +16,22 @@ const Signup = () => {
   const [email, setUseremail] = useState('');
   const [phone, setUserphone] = useState('');
   const [password, setUserpassword] = useState('');
+  const [id, setId] = useState(0);
+
   const list = {
+    id: id,
     name: name,
     email: email,
     phone: phone,
     password: password,
   };
-  console.log(list);
+
   const Onsubmit = () => {
+    setId(id + 1);
     dispatch(USERDATA(list));
     navigate('feed');
   };
+
   return (
     <View style={styles.container}>
       <Text style={{fontSize: 20, color: 'black'}}>{SignUPText}</Text>
